@@ -9,6 +9,10 @@ import 'package:state_research/widgets/loading.dart';
 class BlocView extends StatelessWidget {
   const BlocView({super.key});
 
+  void getJson() {
+    Get.find<JsonBloc>().add(JsonFetched());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,11 +31,7 @@ class BlocView extends StatelessWidget {
               return BlocListWidget(data: state.json.data);
             }
 
-            return BlocEmptyWidget(
-              onPressed: () {
-                Get.find<JsonBloc>().add(JsonFetched());
-              },
-            );
+            return BlocEmptyWidget(onPressed: getJson);
           },
         ),
       ),

@@ -29,9 +29,7 @@ class _RiverpodViewState extends ConsumerState<RiverpodView> {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: _i.data.value?.isEmpty == true
-            ? RiverpodEmptyWidget(
-                onPressed: () => _i.getJson(),
-              )
+            ? RiverpodEmptyWidget(onPressed: _i.getJson)
             : _i.data.maybeWhen(
                 loading: () => const LoadingWidget(),
                 data: (state) => RiverpodListWidget(data: state),

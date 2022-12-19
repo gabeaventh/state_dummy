@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:provider/provider.dart' as provider;
+import 'package:state_research/bind.dart';
 import 'package:state_research/route.dart';
 import 'package:state_research/state_provider/state.dart';
 import 'package:state_research/util/bloc_observer.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         getPages: AppRoutes.getRotues,
+        initialBinding: AppBinding(),
         home: const MyHomePage(title: 'Flutter State Management Demo'),
       ),
     );

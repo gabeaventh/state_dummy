@@ -17,6 +17,11 @@ class AppRoutes {
     GetPage(
       name: AppRouteNames.bloc,
       page: () => const BlocView(),
+
+      /// Bloc Needs to be initialized before the page is loaded
+      /// So we need to bind it to the Route itself
+      /// Instead of bind it in the GetMaterialApp
+      /// Note: This is not required for Riverpod and Provider
       binding: AppBinding(),
     ),
     GetPage(
@@ -26,12 +31,10 @@ class AppRoutes {
     GetPage(
       name: AppRouteNames.riverpod,
       page: () => const RiverpodView(),
-      binding: AppBinding(),
     ),
     GetPage(
       name: AppRouteNames.getx,
       page: () => const GetXView(),
-      binding: AppBinding(),
     )
   ];
 }
