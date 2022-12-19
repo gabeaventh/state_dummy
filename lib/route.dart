@@ -11,7 +11,7 @@ class AppRoutes {
     GetPage(
       name: AppRouteNames.home,
       page: () => const MyHomePage(
-        title: "Flutter State Management Demo",
+        title: 'Flutter State Management Demo',
       ),
     ),
     GetPage(
@@ -30,7 +30,7 @@ class AppRoutes {
     ),
     GetPage(
       name: AppRouteNames.getx,
-      page: () => GetXView(),
+      page: () => const GetXView(),
       binding: AppBinding(),
     )
   ];
