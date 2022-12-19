@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:state_research/models/detail.dart';
+import 'package:state_research/widgets/content.dart';
 
 class BlocListWidget extends StatelessWidget {
   final List<Data>? data;
@@ -16,25 +17,7 @@ class BlocListWidget extends StatelessWidget {
       itemBuilder: (context, index) {
         return Container(
           margin: const EdgeInsets.only(bottom: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Title: ${data?[index].title}',
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Body: ${data?[index].body}',
-                style: const TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-            ],
-          ),
+          child: StateContents(data: data?[index]),
         );
       },
     );
