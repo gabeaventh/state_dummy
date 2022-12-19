@@ -89,6 +89,12 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text('Riverpod View'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(AppRouteNames.getx);
+              },
+              child: const Text('GetX View'),
+            ),
           ],
         ),
       ),

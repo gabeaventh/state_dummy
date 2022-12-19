@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:state_research/bind.dart';
 import 'package:state_research/main.dart';
 import 'package:state_research/state_bloc/view.dart';
+import 'package:state_research/state_getx/view.dart';
 import 'package:state_research/state_provider/view.dart';
 import 'package:state_research/state_riverpod/view.dart';
 
@@ -27,6 +28,11 @@ class AppRoutes {
       page: () => const RiverpodView(),
       binding: AppBinding(),
     ),
+    GetPage(
+      name: AppRouteNames.getx,
+      page: () => GetXView(),
+      binding: AppBinding(),
+    )
   ];
 }
 
@@ -35,4 +41,5 @@ class AppRouteNames {
   static const String bloc = '/bloc';
   static const String provider = '/provider';
   static const String riverpod = '/riverpod';
+  static const String getx = '/getx';
 }
