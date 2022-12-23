@@ -10,7 +10,7 @@ class RiverpodViewInitiator {
     ref = r;
   }
 
-  AsyncValue<List<Data>> get data => ref.watch(jsonNotifierProvider).maybeWhen(
+  AsyncValue<List<Data>> get data => ref.watch(jsonRiverpodProvider).maybeWhen(
         orElse: () => _data,
         data: (state) => AsyncValue.data(state.data ?? []),
         loading: () => const AsyncValue.loading(),
@@ -19,6 +19,6 @@ class RiverpodViewInitiator {
   void dispose() {}
 
   void getJson() {
-    ref.read(jsonNotifierProvider.notifier).getJson();
+    ref.read(jsonRiverpodProvider.notifier).getJson();
   }
 }
